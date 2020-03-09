@@ -1,0 +1,38 @@
+* {
+	font-family: Arial Black
+}
+p, h1, h2 {
+	margin-left: 10px;
+}
+div.leftPanel {
+	width:20%;
+	height:80%;
+	float:left;
+	background-color:#efefef;
+	margin-right:20px;
+}
+ul.leftPanel {
+	list-style-type:none;
+	padding-left:20px;
+	margin:0;
+}
+li.leftPanel {
+	padding-bottom: 1em;
+}
+table {
+	width: min(60vh,70vw);
+	padding-bottom: 0%;
+	background-color: #efe1da;
+}
+td {
+	width: 25%;
+}
+img {
+	width: 100%;
+}
+div.button {
+	cursor: pointer;
+}
+div.selected {
+	background-color: #efe1da;
+}

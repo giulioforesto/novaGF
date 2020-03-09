@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Nova GF</title>
+	<link rel='sortcut icon' href='media/hodor.png' />
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+	<script src='http://requirejs.org/docs/release/2.3.2/minified/require.js'></script>
+</head>
+<body onkeyup='keyup(event)'>
+	<div id='app'>
+		<h1>Coding challenge for Novadiscovery</h1>
+		<div class='leftPanel'>
+			<h2>Games</h2>
+			<ul class='leftPanel'>
+				<li class='leftPanel' v-for='game in games'>
+					<div class='button' :class='game.code == currentGame ? "selected" : ""' @click='changeGame(game.code)'>{{ game.name }}</div>
+				</li>
+			</ul>
+		</div>
+		<div style='width:80%'>
+			<h1 style='display:inline-block'>{{ games[currentGame].name }}</h1>
+			<table>
+				<tbody>
+					<tr v-for='j in [0,1,2,3]'>
+						<td v-for='i in [0,1,2,3]'>
+							<img v-if='currentGame=="HT"' :src='sTable[i][j] == 1 ? "media/hodor.png" : sTable[i][j] == 2 ? "media/timmy.png" : "media/empty.png"'/>
+							<img v-if='currentGame=="TFE"' :src='sTable[i][j] ? "media/"+sTable[i][j]+".png" : "media/empty.png"' />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src='script/main.js'></script>
+</body>
+</html>
